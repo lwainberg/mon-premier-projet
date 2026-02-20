@@ -1,17 +1,23 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Facetview — The new standard for diamond visuals">
+  <section class="min-h-[60vh] flex items-center justify-center text-center px-4">
+    <div>
+      <h1 class="font-display text-5xl sm:text-6xl font-semibold text-surface-900 mb-6">
+        The new standard<br />for gem visuals.
+      </h1>
+      <p class="text-lg text-surface-500 max-w-xl mx-auto mb-8">
+        True-to-life imaging that builds buyer confidence,
+        reduces returns and sets your brand apart.
+      </p>
+      <a
+        href="mailto:keyur@facetview.net?subject=Demo%20Request"
+        class="inline-flex items-center gap-2 px-6 py-3 text-base font-semibold text-white bg-brand-700 rounded-xl hover:bg-brand-800 transition-colors shadow-md"
+      >
+        Get a Demo
+      </a>
+    </div>
+  </section>
+</BaseLayout>
