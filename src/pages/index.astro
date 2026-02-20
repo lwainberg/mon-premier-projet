@@ -1,23 +1,392 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const features = [
+  {
+    tag:         'Eye-Clean',
+    label:       'True Eye-Clean View',
+    description: 'Shows inclusions visible to the naked eye near zero magnification — exactly as the stone appears set in a ring, at a natural viewing distance.',
+    image:       '/assets/view-eye-clean.png',
+    alt:         'FacetView Eye-Clean view — diamond in tweezers as seen by the naked eye',
+  },
+  {
+    tag:         'Face-up',
+    label:       'Face-up View',
+    description: 'Precision Angular Illumination (PAI) reveals the true balance of brilliance, fire and scintillation — consistent with GIA & CIE recommendations.',
+    image:       '/assets/view-face-up.png',
+    alt:         'FacetView Face-up view — diamond face-up with precision illumination',
+  },
+  {
+    tag:         'DIP',
+    label:       'Dynamic Inclusion Plot',
+    description: 'Real-time inclusion detection overlaid on the live image. Serves as a unique fingerprint — ideal for authentication, disputes and training.',
+    image:       '/assets/view-dip.png',
+    alt:         'FacetView DIP — Dynamic Inclusion Plot with inclusion marked in red',
+  },
+  {
+    tag:         'QHD+',
+    label:       'Microscopic View',
+    description: 'Sub-0.1 mm object resolution. Every facet, every blemish, rendered at loupe magnification. Improves buyer confidence at the highest level of scrutiny.',
+    image:       '/assets/view-microscopic.png',
+    alt:         'FacetView Microscopic QHD+ view — diamond at high magnification',
+  },
+  {
+    tag:         'Face-down',
+    label:       'Face-down View',
+    description: 'Reveals the diamond\'s true body colour and readable laser inscription in a single frame. Defensible disclosure, fraud detection built-in.',
+    image:       '/assets/view-face-down.png',
+    alt:         'FacetView Face-down view — laser inscription visible on pavilion',
+  },
+  {
+    tag:         '3D VR',
+    label:       '3D Virtual Reality',
+    description: 'Mimics real-world human vision for a natural, immersive buying experience that closes the gap between online and in-person.',
+    image:       '/assets/view-3dvr.png',
+    alt:         'FacetView 3D VR — side-by-side size comparison view',
+  },
+];
 ---
 
 <BaseLayout title="Facetview — The new standard for diamond visuals">
-  <section class="min-h-[60vh] flex items-center justify-center text-center px-4">
-    <div>
-      <h1 class="font-display text-5xl sm:text-6xl font-semibold text-surface-900 mb-6">
-        The new standard<br />for gem visuals.
+
+  <!-- ═══════════════════════════════════════════════════════════ HERO ══ -->
+  <section class="relative bg-surface-950 text-white overflow-hidden">
+
+    <!-- Halo décoratif -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-brand-700/15 rounded-full blur-[120px]"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-0">
+
+      <!-- Badge -->
+      <div class="flex justify-center mb-8">
+        <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-brand-700/20 border border-brand-700/40 rounded-full text-brand-300 text-xs font-medium tracking-wide">
+          <span class="w-1.5 h-1.5 bg-brand-400 rounded-full animate-pulse" aria-hidden="true"></span>
+          DPIIT Recognised Startup · Seed Funded
+        </span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] text-center mb-6">
+        The new standard<br class="hidden sm:block" />
+        for gem visuals.
       </h1>
-      <p class="text-lg text-surface-500 max-w-xl mx-auto mb-8">
-        True-to-life imaging that builds buyer confidence,
-        reduces returns and sets your brand apart.
+
+      <!-- Subtitle -->
+      <p class="text-lg sm:text-xl text-surface-400 max-w-2xl mx-auto text-center leading-relaxed mb-10">
+        True-to-life diamond imaging in six views — builds buyer confidence,
+        minimises returns and memos, and sets a new bar for transparency.
       </p>
-      <a
-        href="mailto:keyur@facetview.net?subject=Demo%20Request"
-        class="inline-flex items-center gap-2 px-6 py-3 text-base font-semibold text-white bg-brand-700 rounded-xl hover:bg-brand-800 transition-colors shadow-md"
-      >
-        Get a Demo
-      </a>
+
+      <!-- CTA buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <a
+          href="mailto:keyur@facetview.net?subject=Demo%20Request"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-semibold text-white bg-brand-700 rounded-xl hover:bg-brand-600 active:bg-brand-800 transition-colors shadow-lg shadow-brand-700/30"
+        >
+          Get a Demo
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+        <a
+          href="#features"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-medium text-surface-400 hover:text-white transition-colors"
+        >
+          See how it works
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Product screenshot -->
+      <div class="relative max-w-5xl mx-auto">
+        <div
+          class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-surface-950 to-transparent z-10"
+          aria-hidden="true"
+        ></div>
+        <img
+          src="/assets/widget-gui-overview.png"
+          alt="FacetView widget — three simultaneous views of a diamond: Eye-Clean, Face-up and 3D side"
+          class="w-full rounded-t-2xl border border-white/10 shadow-2xl shadow-black/60"
+          loading="eager"
+          width="1920"
+          height="1080"
+        />
+      </div>
+
     </div>
   </section>
+
+
+  <!-- ═══════════════════════════════════════════════ STATS / CONTEXT ══ -->
+  <section class="bg-surface-50 border-y border-surface-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <dl class="grid grid-cols-1 sm:grid-cols-3 gap-10 text-center">
+        <div>
+          <dt class="text-sm text-surface-500 mb-1">Time spent indoors</dt>
+          <dd class="font-display text-5xl font-semibold text-surface-900">90%</dd>
+          <p class="text-xs text-surface-400 mt-1">of a buyer's daily life — the light they'll actually see the stone in</p>
+        </div>
+        <div>
+          <dt class="text-sm text-surface-500 mb-1">Distinct views</dt>
+          <dd class="font-display text-5xl font-semibold text-brand-700">6</dd>
+          <p class="text-xs text-surface-400 mt-1">in a single embeddable widget — no app, no plugin needed</p>
+        </div>
+        <div>
+          <dt class="text-sm text-surface-500 mb-1">Object resolution</dt>
+          <dd class="font-display text-5xl font-semibold text-surface-900">&lt;0.1<span class="text-2xl">mm</span></dd>
+          <p class="text-xs text-surface-400 mt-1">microscopic clarity for confident, informed purchase decisions</p>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════ FEATURES GRID ══ -->
+  <section id="features" class="bg-white py-24 px-4 scroll-mt-16">
+    <div class="max-w-7xl mx-auto">
+
+      <!-- Heading -->
+      <div class="text-center mb-16">
+        <p class="text-xs font-semibold uppercase tracking-widest text-brand-700 mb-3">Features</p>
+        <h2 class="font-display text-4xl sm:text-5xl font-semibold text-surface-900 mb-4">
+          Six ways to see a diamond.
+        </h2>
+        <p class="text-surface-500 max-w-xl mx-auto">
+          Each view serves a distinct purpose — from naked-eye reality checks
+          to microscopic fraud detection.
+        </p>
+      </div>
+
+      <!-- Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {features.map(({ tag, label, description, image, alt }) => (
+          <article class="group flex flex-col rounded-2xl border border-surface-200 overflow-hidden hover:border-brand-700/40 hover:shadow-lg hover:shadow-brand-700/5 transition-all duration-300">
+            <div class="overflow-hidden bg-surface-50">
+              <img
+                src={image}
+                alt={alt}
+                loading="lazy"
+                class="w-full aspect-video object-cover group-hover:scale-[1.02] transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6 flex flex-col gap-3 flex-1">
+              <span class="self-start px-2.5 py-0.5 bg-brand-50 text-brand-700 text-xs font-semibold rounded-full border border-brand-100">
+                {tag}
+              </span>
+              <h3 class="font-semibold text-surface-900 text-lg leading-snug">{label}</h3>
+              <p class="text-sm text-surface-500 leading-relaxed flex-1">{description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════ TECHNOLOGY ══ -->
+  <section id="technology" class="bg-surface-950 text-white py-24 px-4 scroll-mt-16">
+    <div class="max-w-7xl mx-auto">
+
+      <!-- Heading -->
+      <div class="text-center mb-16">
+        <p class="text-xs font-semibold uppercase tracking-widest text-brand-400 mb-3">Technology</p>
+        <h2 class="font-display text-4xl sm:text-5xl font-semibold text-white mb-4">
+          Closest to natural daylight.
+        </h2>
+        <p class="text-surface-400 max-w-xl mx-auto">
+          FacetView's full-spectrum layered light source covers 360–760 nm —
+          reproducing UV-induced colours that standard grading lights miss.
+        </p>
+      </div>
+
+      <!-- Two-column layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Spectral chart -->
+        <div class="rounded-2xl overflow-hidden border border-white/10 bg-white">
+          <img
+            src="/assets/chart-spectrum-d65.png"
+            alt="Spectral power distribution 360–760 nm: FacetView Light covers the full visible spectrum close to natural daylight"
+            loading="lazy"
+            class="w-full"
+          />
+        </div>
+
+        <!-- Text content -->
+        <div class="flex flex-col gap-6">
+          {[
+            {
+              title: 'Full-spectrum illumination',
+              body:  'Covers the complete visible range (360–760 nm), including the UV region that reveals fluorescence and true body colour — following AGA, GIA, ISO 24016:2020 and CIE best practices.',
+            },
+            {
+              title: 'Precision Angular Illumination',
+              body:  "Structured light at precise angles replicates the observer's natural shadow (face-up in a ring within 30°), producing balanced brilliance, fire and scintillation.",
+            },
+            {
+              title: 'Constant Quality Checks',
+              body:  'Proprietary CQC algorithm ensures uniform, continuous imaging — eliminating exposure drift and colour shift between shots.',
+            },
+          ].map(({ title, body }) => (
+            <div class="flex gap-4">
+              <div class="mt-1 w-5 h-5 flex-shrink-0 rounded-full bg-brand-700/30 border border-brand-700/50 flex items-center justify-center">
+                <div class="w-2 h-2 rounded-full bg-brand-400"></div>
+              </div>
+              <div>
+                <h3 class="font-semibold text-white mb-1">{title}</h3>
+                <p class="text-sm text-surface-400 leading-relaxed">{body}</p>
+              </div>
+            </div>
+          ))}
+
+          <!-- Institution logos -->
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs text-surface-600 mb-3 uppercase tracking-widest">Following recommendations by</p>
+            <img
+              src="/assets/chart-spectrum-d65.png"
+              alt="AGA, GIA, ISO 24016:2020, CIE"
+              class="h-8 w-auto opacity-40 brightness-200 grayscale"
+              aria-hidden="true"
+            />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════ COMPARISON ══ -->
+  <section class="bg-white py-24 px-4">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-12">
+        <p class="text-xs font-semibold uppercase tracking-widest text-brand-700 mb-3">Comparison</p>
+        <h2 class="font-display text-4xl sm:text-5xl font-semibold text-surface-900 mb-4">
+          See the difference.
+        </h2>
+        <p class="text-surface-500 max-w-xl mx-auto">
+          Side-by-side with the competition — FacetView renders true colour
+          and contrast that accurately reflects how a stone will be perceived.
+        </p>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden border border-surface-200 shadow-xl shadow-surface-900/5">
+        <img
+          src="/assets/comparison-color-vs-competitors.png"
+          alt="Colour comparison: FacetView (centre) vs Competitor 1-N (left) and Competitor 2 (right) — FacetView shows accurate warm tones and depth"
+          loading="lazy"
+          class="w-full"
+        />
+      </div>
+
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center text-sm text-surface-500">
+        <p><span class="font-semibold text-surface-600">Competitor 1-N</span> — Washed-out, low contrast</p>
+        <p><span class="font-semibold text-brand-700">Facetview</span> — True colour & accurate contrast</p>
+        <p><span class="font-semibold text-surface-600">Competitor 2</span> — Cold cast, detail loss</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════ INTEGRATION ══ -->
+  <section class="bg-surface-50 border-y border-surface-200 py-24 px-4">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Text -->
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-widest text-brand-700 mb-3">Integration</p>
+          <h2 class="font-display text-4xl sm:text-5xl font-semibold text-surface-900 mb-6">
+            Integrates into<br />any website.
+          </h2>
+          <p class="text-surface-500 leading-relaxed mb-8">
+            The FacetView widget is embedded via a single script tag —
+            no custom development, no app, no separate login.
+            Your customers see the full six-view experience directly on your product page.
+          </p>
+          <ul class="space-y-3 text-sm text-surface-600">
+            {[
+              'Drop-in embed — works with Shopify, WooCommerce, custom stacks',
+              'Mobile-first — fully responsive on desktop, tablet and phone',
+              'Supports diamond origin disclosure (ISO 18323, CIBJO, FTC, BIS)',
+              'Hosted and maintained by Facetview — zero ops overhead',
+            ].map(item => (
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-700 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Screenshot -->
+        <div class="rounded-2xl overflow-hidden border border-surface-200 shadow-xl shadow-surface-900/5">
+          <img
+            src="/assets/demo-widget-embedded.png"
+            alt="FacetView widget embedded in a diamond retailer's product page — showing a fancy yellow pear diamond with GIA grade details"
+            loading="lazy"
+            class="w-full"
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════ CTA ══ -->
+  <section class="bg-brand-700 py-24 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+
+      <h2 class="font-display text-4xl sm:text-5xl font-semibold text-white mb-6">
+        Ready to set a new standard?
+      </h2>
+      <p class="text-brand-100 text-lg mb-10 leading-relaxed">
+        We start with two diamonds — you review them internally,
+        share with your customers, and tell us what you think.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="mailto:keyur@facetview.net?subject=Demo%20Request"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-brand-700 bg-white rounded-xl hover:bg-brand-50 transition-colors shadow-lg"
+        >
+          Request a Demo
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+        <a
+          href="tel:+916355675936"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-medium text-white border border-white/30 rounded-xl hover:bg-white/10 transition-colors"
+        >
+          +91 63556 75936
+        </a>
+      </div>
+
+      <!-- JCK teaser -->
+      <div class="mt-14 flex flex-col items-center gap-3">
+        <p class="text-xs text-brand-200 uppercase tracking-widest">Presenting at</p>
+        <img
+          src="/assets/logo-jck-show.png"
+          alt="JCK Las Vegas 2026"
+          class="h-8 w-auto brightness-0 invert opacity-60"
+          loading="lazy"
+        />
+        <p class="text-xs text-brand-200">JCK Las Vegas · 2026</p>
+      </div>
+
+    </div>
+  </section>
+
 </BaseLayout>
